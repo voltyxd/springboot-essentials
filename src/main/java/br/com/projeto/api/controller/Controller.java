@@ -15,6 +15,11 @@ public class Controller {
 
     @Autowired
     private Repositorio repositorio;
+
+    @PostMapping("/api")
+    public Pessoa cadastrar(@RequestBody Pessoa pessoa) {
+        return repositorio.save(pessoa);
+    }
     
     @GetMapping("")
     public String mensagem() {
