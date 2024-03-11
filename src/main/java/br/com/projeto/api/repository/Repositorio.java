@@ -11,4 +11,5 @@ import br.com.projeto.api.model.Pessoa;
 public interface Repositorio extends CrudRepository<Pessoa, Integer> {
     
     List<Pessoa> findAll();
+    Pessoa findById(int id);
 }

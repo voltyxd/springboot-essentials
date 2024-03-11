@@ -27,6 +27,11 @@ public class Controller {
     public List<Pessoa> buscar() {
         return repositorio.findAll();
     }
+
+    @GetMapping("/api/{id}")
+    public Pessoa buscarPorId(@PathVariable int id) {
+        return repositorio.findById(id);
+    }
     
     @GetMapping("")
     public String mensagem() {
