@@ -66,6 +66,16 @@ public class Controller {
     public List<Pessoa> nomeContem(@PathVariable String termo) {
         return repositorio.findByNomeContaining(termo);
     }
+
+    @GetMapping("/api/iniciaCom/{termo}")
+    public List<Pessoa> iniciaCom(@PathVariable String termo) {
+        return repositorio.findByNomeStartsWith(termo);
+    }
+
+    @GetMapping("/api/terminaCom/{termo}")
+    public List<Pessoa> terminaCom(@PathVariable String termo) {
+        return repositorio.findByNomeEndsWith(termo);
+    }
     
     @GetMapping("")
     public String mensagem() {
