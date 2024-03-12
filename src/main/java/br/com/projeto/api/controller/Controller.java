@@ -118,4 +118,10 @@ public class Controller {
     public ResponseEntity<?> status() {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    
+    @PostMapping("/cliente")
+    public void cliente(@Valid @RequestBody Cliente cliente) {
+        
+    }
 }

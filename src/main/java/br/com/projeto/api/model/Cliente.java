@@ -16,7 +16,11 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotEmpty(message = "Informe um nome")
     private String nome;
+
+    @Email(message = "Informe um e-mail válido")
     private String email;
 
     // Get e Set
