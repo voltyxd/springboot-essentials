@@ -76,6 +76,11 @@ public class Controller {
     public List<Pessoa> terminaCom(@PathVariable String termo) {
         return repositorio.findByNomeEndsWith(termo);
     }
+
+    @GetMapping("/api/somaIdades")
+    public int somaIdades() {
+        return repositorio.somaIdades();
+    }
     
     @GetMapping("")
     public String mensagem() {
