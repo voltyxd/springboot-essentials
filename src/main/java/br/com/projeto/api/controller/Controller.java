@@ -51,6 +51,11 @@ public class Controller {
     public long contador() {
         return repositorio.count();
     }
+
+    @GetMapping("/api/ordenarNomes")
+    public List<Pessoa> ordenarNomes() {
+        return repositorio.findByOrderByNomeDesc();
+    }
     
     @GetMapping("")
     public String mensagem() {
