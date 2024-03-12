@@ -42,8 +42,8 @@ public class Controller {
     }
 
     @PutMapping("/api")
-    public Pessoa editar(@RequestBody Pessoa pessoa) {
-        return repositorio.save(pessoa);
+    public ResponseEntity<?> editar(@RequestBody Pessoa pessoa) {
+        return servico.editar(pessoa);
     }
 
     @DeleteMapping("/api/{id}")

@@ -47,5 +47,21 @@ public class Servico {
             return new ResponseEntity<>(repositorio.findById(id), HttpStatus.OK);
         }
     }
+
+    // Método para editar dados
+    public ResponseEntity<?> editar(Pessoa pessoa) {
+        if (repositorio.findById(pessoa.getId()) == null) {
+            mensagem.setMensagem("Id informado não existe.");
+            return new ResponseEntity<>(mensagem, HttpStatus.NOT_FOUND);
+        } else if (pessoa.getNome().isEmpty()) {
+            mensagem.setMensagem("É necessário informar um nome");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        } else if (pessoa.getIdade() < 0) {
+            mensagem.setMensagem("Informe uma idade válida");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(repositorio.save(pessoa), HttpStatus.OK);
+        }
+    }
     
 }
