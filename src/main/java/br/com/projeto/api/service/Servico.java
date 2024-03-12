@@ -18,6 +18,7 @@ public class Servico {
     @Autowired
     private Repositorio repositorio;
 
+    // Método para cadastrar pessoas
     public ResponseEntity<?> cadastrar(Pessoa pessoa) {
         
         if (pessoa.getNome().isEmpty()) {
@@ -32,6 +33,9 @@ public class Servico {
 
     }
 
-    
+    // Método para buscar pessoas
+    public ResponseEntity<?> buscar() {
+        return new ResponseEntity<>(repositorio.findAll(), HttpStatus.OK);
+    }
     
 }

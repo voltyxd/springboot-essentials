@@ -32,8 +32,8 @@ public class Controller {
     }
 
     @GetMapping("/api")
-    public List<Pessoa> buscar() {
-        return repositorio.findAll();
+    public ResponseEntity<?> buscar() {
+        return servico.buscar();
     }
 
     @GetMapping("/api/{id}")
