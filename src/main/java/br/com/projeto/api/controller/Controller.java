@@ -37,8 +37,8 @@ public class Controller {
     }
 
     @GetMapping("/api/{id}")
-    public Pessoa buscarPorId(@PathVariable int id) {
-        return repositorio.findById(id);
+    public ResponseEntity<?> buscarPorId(@PathVariable int id) {
+        return servico.buscarPorId(id);
     }
 
     @PutMapping("/api")

@@ -37,5 +37,15 @@ public class Servico {
     public ResponseEntity<?> buscar() {
         return new ResponseEntity<>(repositorio.findAll(), HttpStatus.OK);
     }
+
+    // Método para buscar pessoa por id
+    public ResponseEntity<?> buscarPorId(int id) {
+        if (repositorio.findById(id) == null) {
+            mensagem.setMensagem("Pessoa com Id " + id +  " não existe no banco de dados");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(repositorio.findById(id), HttpStatus.OK);
+        }
+    }
     
 }
