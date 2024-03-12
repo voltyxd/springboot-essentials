@@ -46,6 +46,11 @@ public class Controller {
 
         repositorio.delete(pessoaEncontrada);
     }
+
+    @GetMapping("/api/contador")
+    public long contador() {
+        return repositorio.count();
+    }
     
     @GetMapping("")
     public String mensagem() {
