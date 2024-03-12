@@ -47,10 +47,8 @@ public class Controller {
     }
 
     @DeleteMapping("/api/{id}")
-    public void remover(@PathVariable int id) {
-        Pessoa pessoaEncontrada = repositorio.findById(id);
-
-        repositorio.delete(pessoaEncontrada);
+    public ResponseEntity<?> remover(@PathVariable int id) {
+        return servico.remover(id);
     }
 
     @GetMapping("/api/contador")

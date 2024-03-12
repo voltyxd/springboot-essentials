@@ -63,5 +63,18 @@ public class Servico {
             return new ResponseEntity<>(repositorio.save(pessoa), HttpStatus.OK);
         }
     }
-    
+
+    // Método para remover registros
+    public ResponseEntity<?> remover(int id) {
+        if (repositorio.findById(id) == null) {
+            mensagem.setMensagem("O id informado não existe");
+            return new ResponseEntity<>(mensagem, HttpStatus.NOT_FOUND);
+        } else {
+            Pessoa pessoa = repositorio.findById(id);
+            repositorio.delete(pessoa);
+
+            mensagem.setMensagem("Pessoa removida com sucesso.");
+            return new ResponseEntity<>(mensagem, HttpStatus.OK);
+        }
+    }
 }
