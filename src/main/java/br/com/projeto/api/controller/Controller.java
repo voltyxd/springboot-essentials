@@ -81,6 +81,11 @@ public class Controller {
     public int somaIdades() {
         return repositorio.somaIdades();
     }
+
+    @GetMapping("/api/idadeMaiorIgual/{idade}")
+    public List<Pessoa> idadeMaiorIgual(@PathVariable int idade) {
+        return repositorio.idadeMaiorIgual(idade);
+    }
     
     @GetMapping("")
     public String mensagem() {
