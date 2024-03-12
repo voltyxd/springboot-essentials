@@ -56,6 +56,11 @@ public class Controller {
     public List<Pessoa> ordenarNomes() {
         return repositorio.findByOrderByNomeDesc();
     }
+
+    @GetMapping("/api/ordenarNomes2")
+    public List<Pessoa> ordenarNomes2() {
+        return repositorio.findByNomeOrderByIdade("Ana");
+    }
     
     @GetMapping("")
     public String mensagem() {
