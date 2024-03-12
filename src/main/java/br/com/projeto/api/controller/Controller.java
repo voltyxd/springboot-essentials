@@ -2,6 +2,8 @@ package br.com.projeto.api.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.projeto.api.model.Cliente;
 import br.com.projeto.api.model.Pessoa;
 import br.com.projeto.api.repository.Repositorio;
 import br.com.projeto.api.service.Servico;
